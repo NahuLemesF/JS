@@ -8,4 +8,4 @@ if(autenticado /*=== true, esto no*/) {
 }
 
 // Operador ternario
-console.log(autenticado ? 'Si está autenticado' : 'No está autenticado')
+console.log(autenticado ? 'Si está autenticado' : 'No está autenticado');
