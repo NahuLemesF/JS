@@ -4,13 +4,13 @@ const producto = {
     disponible: true
 }
 
-// Destructuring
+
+// Object destructuring
 const { nombre } = producto;
+
 console.log(nombre);
 
-// Destructuring con arreglos
+// Destructuring con Arreglos
 const numeros = [10, 20, 30, 40, 50];
 
-const [primero, segundo, ...tercero] = numero; // Van por orden no importa cual puse
-
-console.log(primero);
+const [0] = numeros
