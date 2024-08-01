@@ -4,7 +4,6 @@
 
 
 localStorage.setItem('nombre', 'Juan');
-
 // añadir algo a sessionstorage
 sessionStorage.setItem('nombre', 'Pablo');
 
