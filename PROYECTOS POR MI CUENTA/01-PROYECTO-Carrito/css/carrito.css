@@ -1,0 +1,27 @@
+.carrito-icono {
+    position: relative;
+    display: inline-block;
+}
+
+#img-carrito {
+    width: 40px; /* Ajusta el tamaño del ícono del carrito si es necesario */
+}
+
+#contador-carrito {
+    position: absolute;
+    top: -5px; /* Mueve el contador hacia arriba */
+    right: -5px; /* Mueve el contador hacia la derecha */
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 4px;
+    font-size: 12px; /* Tamaño más pequeño para el número */
+    font-weight: bold;
+    text-align: center;
+    width: 15px; /* Tamaño del contador */
+    height: 15px; /* Tamaño del contador */
+    line-height: 20px; /* Centra verticalmente el texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

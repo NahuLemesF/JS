@@ -23,8 +23,6 @@ function agregarCurso(e) {
         // Variable del curso con traversing
         const cursoSeleccionado = e.target.parentElement.parentElement;
         leerDatosDeCurso(cursoSeleccionado);
-
-        console.log(arrayCursos);
     }
 }
 
@@ -56,8 +54,11 @@ function leerDatosDeCurso(curso) {
     // si existe actualiza la cantidad, sino lo agrega
 
     if (cursoExiste) {
-        arrayCursos.forEach(curso => {
-            curso.cantidad++;
+        arrayCursos = arrayCursos.map(curso => {
+            if (curso.id === infoDelCurso.id) {
+                curso.cantidad++;
+            }
+            return curso;
         });
     } else {
 
