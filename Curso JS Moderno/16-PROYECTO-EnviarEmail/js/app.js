@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const botonEnviar = document.querySelector('#botones button[type="submit"]');
     const botonReset = document.querySelector('#botones button[type="reset"]');
     const spinner = document.getElementById('spinner');
+    
     // Eventos
     inputEmail.addEventListener('blur', validarInput);
     inputAsunto.addEventListener('blur', validarInput);
