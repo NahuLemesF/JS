@@ -73,7 +73,19 @@ function llenarSelectYear() {
 function filtroBusqueda() {
     const filtro = autos.filter(filtroMarca).filter(filtroYear).filter(filtroMinimo).filter(filtroMaximo).filter(filtroPuertas).filter(filtroTransmision).filter(filtroColor);
 
-    mostrarAutos(filtro);
+    if (filtro.length) {
+        mostrarAutos(filtro);
+    } else {
+        noResultado();
+    };
+};
+
+function noResultado() {
+    limpiarHTML();
+    const noResultado = document.createElement('div');
+    noResultado.classList.add('alerta', 'error');
+    noResultado.textContent = 'No hay resultados para su búsqueda';
+    resultado.appendChild(noResultado);
 };
 
 function filtroMarca(auto) {
@@ -106,7 +118,7 @@ function filtroMaximo(auto) {
         return auto.precio <= maximo;
     };
     return true;
-}
+};
 
 function filtroPuertas(auto) {
     const { puertas } = datosBuscador;
@@ -114,7 +126,7 @@ function filtroPuertas(auto) {
         return auto.puertas === puertas;
     };
     return true;
-}; 
+};
 
 function filtroTransmision(auto) {
     const { transmision } = datosBuscador;
@@ -122,7 +134,7 @@ function filtroTransmision(auto) {
         return auto.transmision === transmision;
     };
     return true;
-}; 
+};
 
 function filtroColor(auto) {
     const { color } = datosBuscador;
