@@ -13,8 +13,7 @@ h1, h2 {
     font-weight: bold;
 }
 
-.error {
-    background-color: red;
+.error, .success {
     text-align: center;
     padding: 10px;
     text-transform: uppercase;
@@ -22,4 +21,31 @@ h1, h2 {
     max-width: 400px;
     margin: 0 auto;
     color: white;
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.5s ease-in-out; /* Transición suave para opacidad */
+}
+
+.error {
+    background-color: red;
+    animation: fadeInOut 4s ease-in-out forwards; /* 3.5s para incluir el tiempo de visibilidad y la transición */
+}
+
+.success {
+    background-color: green;
+    animation: fadeInOut 4s ease-in-out forwards; /* 3.5s para incluir el tiempo de visibilidad y la transición */
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0; /* Comienza invisible */
+    }
+    10% {
+        opacity: 1; /* Se hace visible */
+    }
+    90% {
+        opacity: 1; /* Permanece visible */
+    }
+    100% {
+        opacity: 0; /* Se hace invisible */
+    }
 }
