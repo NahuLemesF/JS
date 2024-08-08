@@ -61,10 +61,11 @@ form {
 .sitio-web  {
     color: white;
     display: block;
-    font-size: 4rem;
+    font-size: 2rem;
     max-width: 1200px;
     margin: 2rem auto;
     text-decoration: none;
+    text-align: center;
 }
 .sitio-web:hover {
     color: white;
