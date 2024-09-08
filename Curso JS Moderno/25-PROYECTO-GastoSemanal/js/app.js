@@ -27,7 +27,7 @@ class Presupuesto {
         this.restante = this.presupuesto - totalGastos;
     };
     eliminarGasto(id) {
-        this.gastos = this.gastos.filter( gasto => gasto.id !== id)
+        this.gastos = this.gastos.filter(gasto => gasto.id !== id)
         this.calcularRestante();
     };
 };
@@ -42,14 +42,16 @@ class UI {
     };
     imprimirAlerta(mensaje, tipoMensaje) {
         // Creo el mensaje
-        const divMensaje = document.createElement('div');
-        divMensaje.classList.add('text-center', 'alert');
+        const divMensaje = document.createElement('DIV');
+        divMensaje.classList.add('text-center', 'alert', 'alerta');
 
-        if (tipoMensaje === 'error') {
-            divMensaje.classList.add('alert-danger');
-        } else {
-            divMensaje.classList.add('alert-success');
-        };
+        // Eliminar alertas duplicadas
+        const alertaPrevia = document.querySelector('.alerta');
+        alertaPrevia?.remove();
+
+        // Validar tipo de mensaje
+        tipoMensaje === 'error' ? divMensaje.classList.add('alert-danger') : divMensaje.classList.add('alert-success');
+
 
         // Agrego el mensaje
         divMensaje.textContent = mensaje;
@@ -114,16 +116,6 @@ class UI {
         } else {
             restanteDiv.classList.remove('alert-warning', 'alert-danger');
             restanteDiv.classList.add('alert-success');
-        }
-
-        if (restante <= 0) {
-            // restanteDiv.innerHTML = `<p>Restante: $ <span id="restante">${restante}</span></p> <p>Presupuesto agotado</p>`;
-            // Creo el mensaje
-            const divPresupuestoAgotado = document.createElement('div');
-            divPresupuestoAgotado.classList.add('presupuesto', 'text-center', 'alert', 'alert-dark',);
-            divPresupuestoAgotado.innerHTML = '<p>Presupuesto Agotado</p>';
-
-            document.querySelector('#presupuesto').appendChild(divPresupuestoAgotado);
         }
     };
 };
@@ -195,6 +187,6 @@ function eliminarGasto(id) {
     const { gastos, restante } = presupuesto;
     ui.listarGasto(gastos);
     ui.actualizarRestante(restante);
-    ui.colorBannerRestante(presupuesto); 
+    ui.colorBannerRestante(presupuesto);
     ui.imprimirAlerta('Gasto eliminado');
 }
