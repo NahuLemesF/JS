@@ -21,7 +21,7 @@ export function submitCita(e) {
         return
     }
 
-    if(editando) {
+    if(editando.value) {
         citas.editar({...citaObj})
         new Notificacion({
             texto: 'Guardado Correctamente',
@@ -37,7 +37,7 @@ export function submitCita(e) {
     formulario.reset()
     reiniciarObjetoCita()
     formularioInput.value = 'Registrar Paciente'
-    editando = false
+    editando.value = false
 }
 
 export function reiniciarObjetoCita() {
@@ -72,7 +72,7 @@ export function cargarEdicion(cita) {
     fechaInput.value = cita.fecha;
     sintomasInput.value = cita.sintomas;
 
-    editando = true;
+    editando.value = true;
 
     formularioInput.value = 'Guardar Cambios';
 }
