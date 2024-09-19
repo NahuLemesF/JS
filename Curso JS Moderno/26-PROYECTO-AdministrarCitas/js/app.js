@@ -1,3 +1,5 @@
+//NOTIFICACIONES
+
 /* ----------------- Selectores ----------------- */
 const inputPaciente = document.querySelector('#paciente');
 const inputPropietario = document.querySelector('#propietario');
